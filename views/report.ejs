@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Report</title>
+</head>
+<body>
+    <div class="p-20">
+  <h1 class="text-center text-5xl ">Attendance Report</h1>
+
+  <table class="w-full mt-10 mb-5">
+      <thead>
+      <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+          <th class="px-4 py-3">Name</th>
+        <th class="px-4 py-3">Date</th>
+        <th class="px-4 py-3">Status</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white">
+        <% attendance.forEach(a => { %>
+            <tr class="text-gray-700">
+              <td class="px-4 py-3 border"><%= a.userId.name %></td>
+              <td class="px-4 py-3 border"><%= a.date.toDateString() %></td>
+              <td class="px-4 py-3 border"><%= a.status %></td>
+            </tr>
+          <% }) %>
+    </tbody>
+  </table>
+  <a href="/admin" class="mt-40 bg-blue-600 px-1 py-1 rounded-md text-white text-1xl cursor-pointer">Back to Admin Panel</a>
+</div>
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>

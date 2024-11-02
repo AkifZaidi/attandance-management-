@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+</head>
+
+<body>
+    <section class="container mx-auto p-6 font-mono">
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+            <div class="w-full overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr
+                            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">email</th>
+                            <th class="px-4 py-3">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <% attandanceArr.map((item)=> { %>
+                            <tr class="text-gray-700">
+                                <td class="px-4 py-3 border">
+                                    <div class="flex items-center text-sm">
+                                        <div class="relative border-2 w-12 h-12 mr-3 rounded-full">
+                                            <img class="w-full h-full rounded-full object-cover"
+                                                src="/images/<%= item.imageUrl %>" alt="" loading="lazy" />
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold">
+                                                <%= item.name%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 border text-md font-semibold">
+                                    <%= item.email %>
+                                </td>
+                                <td class="px-4 py-3 border text-sm">
+                                    <%= item.date %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

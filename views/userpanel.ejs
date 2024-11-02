@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Userpanel</title>
+</head>
+<body>
+    <div class="bg-zinc-600 min-h-screen pt-6">
+            <% if (message) { %>
+                <div class="border-4 border-green-900 p-6 w-2/3 text-2xl font-[400] bg-green-500 ml-4">
+                    <span class="font-[700] underline cursor-pointer"><%= email %></span> 
+                    <%= message %>
+                </div>
+                <% } %>
+        <div class="h-screen flex justify-center items-center gap-10">
+            <form action="/userpanel" method="post" class="flex gap-20">
+                <input type="submit"  value="Mark Attandance" class="mt-5 bg-blue-600 px-10 py-10 rounded-md text-4xl cursor-pointer">
+                <select hidden name="status" id="">
+                    <option value="status">status</option>
+                </select>
+            </form> 
+            <a href="/userpanel/view" class="mt-5 bg-blue-600 px-10 py-10 rounded-md text-4xl cursor-pointer">View Attandance </a>
+            <a href="/userpanel/leave" class="mt-5 bg-blue-600 px-10 py-10 rounded-md text-4xl cursor-pointer">leave Attandance </a>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>

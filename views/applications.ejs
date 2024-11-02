@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <section class="container mx-auto p-6 font-mono">
+        <h1 class="text-center text-5xl">Applications</h1>
+        <div class="w-full mt-6 overflow-hidden rounded-lg shadow-lg">
+            <div class="w-full overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr
+                            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">email</th>
+                            <th class="px-4 py-3">Date</th>
+                            <th class="px-4 py-3">Applications</th>
+                            <th class="px-4 py-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <%leaveAttandance.map((data) => { %>
+                            <tr class="text-gray-700">
+                                <td class="px-4 py-3 border">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <p class="font-semibold">
+                                                <%= data.name%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 border text-md font-semibold">
+                                    <%= data.email%>
+                                </td>
+                                <td class="px-4 py-3 border text-sm">
+                                    <%= data.date.toDateString()%>
+                                </td>
+                                <td class="px-4 py-3 border text-sm">
+                                    <%= data.leaveApplication%>                                                                
+                                </td>
+                                <td class="px-4 py-3 border text-sm">
+                                    <form action="/admin/leave" method="POST">
+                                        <select name="userId" required>
+                                            <option value="<%= data.userId%>"><%= data.name%></option>
+                                        </select>
+                                        <input type="date" name="date" required>
+                                        <button type="submit">Approve</button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                       <% })%>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+            </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
